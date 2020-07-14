@@ -248,3 +248,29 @@ function powerCalc(base, exponent) {
 //13.2 - Constant O(1) - only takes in the one set of values and will return a value based
 // on both of them
 //14.2 - Constant O(1) - see above
+
+//12.3 Reverse String
+
+function reverseString(string) {
+     let newString = '';
+     for(let i = 0; i < string.length; i++) {
+          return newString += string[string.length - i]
+     }
+}
+
+//13.3 - Linear O(n) - it depends on the length of the string which determines the length the loop
+//14.3 - Linear O(n) - see above
+
+//12.4 Triangular Number
+
+function triangularNumber(num) {
+     let n = 0;
+     for(let i = 1; i <= num; i++) {
+          n += num;
+     }
+     return n;
+}
+
+//13.4 - Linear O(n) - it depends on the input of the string which determines the limit
+//14.4 - Linear O(n) - see above
+
