@@ -147,3 +147,30 @@ function efficientSearch(array, item) {
 
 // O(nlog(n)) - because each time the while loop is iterated over, the amount of possible
 // currentIndexes is halved
+
+// 9. Random element
+// What is the Big O of the following algorithm? Explain your answer
+
+function findRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Constant - O(1), because the length of the actual array does not matter, and the function will
+// grab a random element each time, which takes the same amount of time.
+
+// 10. What Am I?
+// What does the following algorithm do? What is the Big O of the following algorithm? 
+// Explain your answer
+
+function isWhat(n) {
+    if (n < 2 || n % 1 !== 0) {
+        return false;
+    }
+    for (let i = 2; i < n; ++i) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
+// This algorithm figures out whether or not the input is a prime number. 
+// Linear O(n) - because the amount of operations is dependent on the value of n.
