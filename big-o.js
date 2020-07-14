@@ -214,3 +214,5 @@ function tower(
 
 // Exponential - O(2^n) - the number of moves increases greatly based on the 
 // number of disks. The more disks, the greater the rate of growth
+
+//Run-time: 2^n -1
