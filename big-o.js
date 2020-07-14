@@ -32,3 +32,34 @@ function isEven(value) {
 
 // Constant time - O(1), because the algorithm performs a basic math check and returns a single boolean
 // One input with one operation
+
+// 3. Are you here?
+// What is the Big O of the following algorithm? Explain your answer
+
+function areYouHere(arr1, arr2) {
+    for (let i = 0; i < arr1.length; i++) {
+        const el1 = arr1[i];
+        for (let j = 0; j < arr2.length; j++) {
+            const el2 = arr2[j];
+            if (el1 === el2) return true;
+        }
+    }
+    return false;
+}
+
+// Polynomial time - O(n^2), because of the nested loops (hence the ^2), which will essentially
+// double the amount of time necessary to execute the function
+
+
+// 4. Doubler
+// What is the Big O of the following algorithm? Explain your answer
+
+function doubleArrayValues(array) {
+    for (let i = 0; i < array.length; i++) {
+        array[i] *= 2;
+    }
+    return array;
+}
+
+// Linear time - O(n), because the time necessary is dependent on the length of the array
+// and will increase in propotion to that
