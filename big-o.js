@@ -174,3 +174,40 @@ function isWhat(n) {
 
 // This algorithm figures out whether or not the input is a prime number. 
 // Linear O(n) - because the amount of operations is dependent on the value of n.
+
+//11. Tower of Hanoi
+
+// Algorithm in English
+// Disk 1 => Rod 3
+// Disk 2 => Rod 2
+// Disk 1 => Rod 2
+// Disk 3 => Rod 3
+// Disk 1 => Rod 1
+// Disk 2 => Rod 3
+// Disk 1 => Rod 3
+
+function hanoi(disks, location, destination, intermediate) {
+
+  if (disks == 0) {
+    return;
+  }
+
+  hanoi(disks - 1, location, destination, intermediate);
+
+  function movedisks(location, destination) {
+    
+  }
+
+  hanoi(disks - 1, intermediate, destination, location);
+
+
+}
+
+// On Rod 1 - the two largest disks remain.
+// On Rod 2 - the middle size, the second smallest, and the smallest disk.
+// On Rod 3 - remains bare to the world.
+
+// 3 disks = 7 moves. 4 = 15 disks. 5 = 31 disks.
+
+// Exponential - O(2^n) - the number of moves increases greatly based on the 
+// number of disks. The more disks, the greater the rate of growth
