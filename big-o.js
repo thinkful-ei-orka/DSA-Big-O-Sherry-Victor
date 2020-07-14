@@ -312,3 +312,16 @@ function fibonacci(num) {
 
 // 13.6 - Linear O(n) - only going to happen as many times as there are numbers inputted
 // 14.6 - Linear O(n) - see above
+
+// 12.7 Factorial 
+
+function factorial(num) {
+     let product = 1;
+     for (let i = 1; i < num; i++) {
+          product *= i
+     }
+     return product;
+}
+
+//13.7 - Linear O(n), because the loop only iterates as many times as your input number
+//14.7 - Linear O(n) -see above
