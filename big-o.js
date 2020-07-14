@@ -63,3 +63,30 @@ function doubleArrayValues(array) {
 
 // Linear time - O(n), because the time necessary is dependent on the length of the array
 // and will increase in propotion to that
+
+// 5. Naive search
+// What is the Big O of the following algorithm? Explain your answer
+
+function naiveSearch(array, item) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+            return i;
+        }
+    }
+}
+
+// Linear time - O(n), due to the fact that the algorithm searches through each element in the array
+// Worst case being that the element does not exist in the array
+
+// 6. Creating pairs:
+// What is the Big O of the following algorithm? Explain your answer
+
+function createPairs(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for(let j = i + 1; j < arr.length; j++) {
+            console.log(arr[i] + ", " +  arr[j] );
+        }
+    }
+}
+
+// Polynomial - O(n^2) due to the nested loops in the function
