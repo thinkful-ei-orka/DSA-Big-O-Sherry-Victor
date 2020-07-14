@@ -274,3 +274,41 @@ function triangularNumber(num) {
 //13.4 - Linear O(n) - it depends on the input of the string which determines the limit
 //14.4 - Linear O(n) - see above
 
+//12.5 String Splitter
+
+function strSplitter(string, splitter) {
+    let words = [];
+    for(let i = 0; i < string.length; i++) {
+        if (string[i] === splitter) {
+            words.push(string.slice(i, splitter));
+        }
+    }
+    return words;
+}
+
+//13.5 - Linear O(n) - it depends on the length of the string variable passed in
+//14.5 - Linear O(n) - see above
+
+//12.6 Fibonacci
+
+function fibonacci(num) {
+    let num1 = 1;
+    let num2 = 0;
+    let seq;
+    if(num === 0) {
+        return 0;
+    } else if(num === 1) {
+        return 1;
+    } else {
+        for(let i = 0; i < num; i++) {
+            seq = num1;
+            num1 = num1 + num2;
+            num2 = seq;
+            num--;
+        }
+    return num2;
+    }
+}
+
+// 13.6 - Linear O(n) - only going to happen as many times as there are numbers inputted
+// 14.6 - Linear O(n) - see above
