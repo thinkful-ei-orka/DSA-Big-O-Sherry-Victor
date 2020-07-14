@@ -186,28 +186,31 @@ function isWhat(n) {
 // Disk 2 => Rod 3
 // Disk 1 => Rod 3
 
-function hanoi(disks, location, destination, intermediate) {
-
-  if (disks == 0) {
-    return;
-  }
-
-  hanoi(disks - 1, location, destination, intermediate);
-
-  function movedisks(location, destination) {
-    
-  }
-
-  hanoi(disks - 1, intermediate, destination, location);
-
-
+function tower(
+     depth,
+     source = 0,
+     dest = 2,
+     temp = 1,
+     status = [Array.from(Array(depth), (_, i) => depth - i), [], []]
+) {
+     if (depth === 1) {
+          console.log(`Moved ${source} to ${dest}`);
+          status[dest].push(status[source].pop());
+          console.log(status)
+          return;
+     }
+     tower(1, source, temp, dest, status)
+     tower(1, source, dest, temp, status)
+     tower(1, temp, dest, source, status)
 }
 
 // On Rod 1 - the two largest disks remain.
 // On Rod 2 - the middle size, the second smallest, and the smallest disk.
 // On Rod 3 - remains bare to the world.
 
-// 3 disks = 7 moves. 4 = 15 disks. 5 = 31 disks.
+// 3 disks = 7 moves. 
+// 4 = 15 disks. 
+// 5 = 31 disks.
 
 // Exponential - O(2^n) - the number of moves increases greatly based on the 
 // number of disks. The more disks, the greater the rate of growth
