@@ -90,3 +90,60 @@ function createPairs(arr) {
 }
 
 // Polynomial - O(n^2) due to the nested loops in the function
+
+// 7. Compute the sequence
+// What does the following algorithm do? What is its runtime complexity? Explain your answer
+
+function compute(num) {
+    let result = [];
+    for (let i = 1; i <= num; i++) {
+
+        if (i === 1) {
+            result.push(0);
+        }
+        else if (i === 2) {
+            result.push(1);
+        }
+        else {
+            result.push(result[i - 2] + result[i - 3]);
+        }
+    }
+    return result;
+}
+
+// It returns a sequence of numbers, starting with 0, then 1, and then goes on until num
+// is reached, using the fibonacci numbers.
+// Linear time - O(n), contines to go through the iterations until the final num has
+// been computed.
+
+
+// 8. An efficient search
+// In this example, we return to the problem of searching using a more sophisticated 
+// approach than in naive search, above. Assume that the input array is always sorted. 
+// What is the Big O of the following algorithm? Explain your answer
+
+function efficientSearch(array, item) {
+    let minIndex = 0;
+    let maxIndex = array.length - 1;
+    let currentIndex;
+    let currentElement;
+
+    while (minIndex <= maxIndex) {
+        currentIndex = Math.floor((minIndex + maxIndex) / 2);
+        currentElement = array[currentIndex];
+
+        if (currentElement < item) {
+            minIndex = currentIndex + 1;
+        }
+        else if (currentElement > item) {
+            maxIndex = currentIndex - 1;
+        }
+        else {
+            return currentIndex;
+        }
+    }
+    return -1;
+}
+
+// O(nlog(n)) - because each time the while loop is iterated over, the amount of possible
+// currentIndexes is halved
