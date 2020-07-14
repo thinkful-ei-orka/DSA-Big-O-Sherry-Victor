@@ -216,3 +216,35 @@ function tower(
 // number of disks. The more disks, the greater the rate of growth
 
 //Run-time: 2^n -1
+
+//12/13/14. Interative Version, Recursive Big O, Iterative Big O
+
+//12.1 Counting Sheep
+
+function countingSheep(num) {
+  for(let i = 0; i < num; i++) {
+    if (i === num) {
+      return 'All sheep jumped over the fence';
+    }
+    return `${num - i}: Another sheep jumps over the fence`;
+  }
+}
+
+//13.1 - Linear O(n) - depends on now many sheep there are in the flock
+//14.1 - Linear O(n) - see above
+
+//12.2 Power Calculator
+
+function powerCalc(base, exponent) {
+  if (exponent < 0) {
+    return 'Exponent must be >= 0';
+  } else if (exponent === 0) {
+    return 1;
+  } else {
+    return Math.pow(base, exponent);
+  }
+}
+
+//13.2 - Constant O(1) - only takes in the one set of values and will return a value based
+// on both of them
+//14.2 - Constant O(1) - see above
