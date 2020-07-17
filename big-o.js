@@ -199,10 +199,12 @@ function tower(
           console.log(status)
           return;
      }
-     tower(1, source, temp, dest, status)
+     tower(depth - 1, source, temp, dest, status)
      tower(1, source, dest, temp, status)
-     tower(1, temp, dest, source, status)
+     tower(depth - 1, temp, dest, source, status)
 }
+
+console.log(tower(4, 0, 2, 1))
 
 // On Rod 1 - the two largest disks remain.
 // On Rod 2 - the middle size, the second smallest, and the smallest disk.
